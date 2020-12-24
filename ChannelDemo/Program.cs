@@ -1,39 +1,34 @@
 ﻿using System;
-using System.Threading;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using static System.Int32;
 
 namespace ChannelDemo
 {
     public class Program
     {
-        private readonly MyChannel<int> _myChannel = new MyChannel<int>();
-
         private static async Task Main()
         {
-            await new Program().WriteThenReadByUsingCustomChannel();
-        }
-
-        public async Task WriteThenReadByUsingCustomChannel()
-        {
-            Console.WriteLine("Main Thread:" + Thread.CurrentThread.ManagedThreadId);
-
-            _ = Task.Run(async () =>
+            var demos = new List<IChannelDemo>
+                { 
+                    new MyChannelDemo(),
+                    new BoundedChannelDemo(),
+                    new UnboundedChannelDemo()
+                };
+            do
             {
-                Console.WriteLine("Producer Thread:" + Thread.CurrentThread.ManagedThreadId);
-                for (var message = 0; message < 10; message++)
+                Console.WriteLine(@"Select your option: 1. MyChannel 2. BoundedChannel 3.UnboundedChannel");
+                if (TryParse(Console.ReadLine(), out var option))
                 {
-                    await Task.Delay(1000);
-                    _myChannel.Write(message);
+                    if (option < 1 || option > 4) Console.WriteLine("Invalid Option");
+                    await demos[option - 1].Run();
                 }
-                _myChannel.Complete();
-            });
-
-            Console.WriteLine("Consumer Thread:" + Thread.CurrentThread.ManagedThreadId);
-            while (!_myChannel.IsComplete())
-            {
-                var result = await _myChannel.ReadAsync();
-                Console.WriteLine(result);
-            }
+                else
+                {
+                    Console.WriteLine("Invalid Option");
+                }
+                Console.WriteLine("Would you like to continue? [Y]es | [N]o:");
+            } while (Console.ReadLine()?.ToLower() == "y");
         }
     }
 }
