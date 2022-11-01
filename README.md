@@ -1,5 +1,7 @@
 # Advanced .NET Framework features
 
+[![.NET](https://github.com/jsowndarrajan/advanced-dotnet-features/actions/workflows/dotnet.yml/badge.svg)](https://github.com/jsowndarrajan/advanced-dotnet-features/actions/workflows/dotnet.yml)
+
 ## Channel
 
 A channel is simply a data structure that is used to store produced data for a consumer to retrieve, and an appropriate synchronization to enable that to happen safely, while also enabling appropriate notifications in both directions. 
