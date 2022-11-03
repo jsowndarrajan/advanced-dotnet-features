@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30804.86
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChannelDemo", "ChannelDemo\ChannelDemo.csproj", "{DD934A73-0B78-4CCE-82C9-B8A018BC2A17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChannelDemo", "ChannelDemo\ChannelDemo.csproj", "{DD934A73-0B78-4CCE-82C9-B8A018BC2A17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NullableDemo", "NullableDemo\NullableDemo.csproj", "{BF5A65B2-D04F-4017-AE2B-343280D89B54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{DD934A73-0B78-4CCE-82C9-B8A018BC2A17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD934A73-0B78-4CCE-82C9-B8A018BC2A17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD934A73-0B78-4CCE-82C9-B8A018BC2A17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF5A65B2-D04F-4017-AE2B-343280D89B54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF5A65B2-D04F-4017-AE2B-343280D89B54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF5A65B2-D04F-4017-AE2B-343280D89B54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF5A65B2-D04F-4017-AE2B-343280D89B54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
